@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "emissions": "Emissionen",
+    "sustainability": "Nachhaltigkeit"
+  },
+  "home": {
+    "hero_title": "Globale",
+    "hero_subtitle": "CO2-Emissionen",
+    "hero_desc": "Datentransparenz für globale Umweltauswirkungen.",
+    "mission": "Unsere Mission",
+    "view_analytics": "Emissionen ansehen",
+    "why_title": "Warum ist Tracking wichtig?",
+    "why_desc": "Transparente Daten sind der erste Schritt zur globalen Klimaverantwortung. Wir bieten eine Plattform zur Visualisierung und Analyse von CO2-Fußabdrücken in verschiedenen Sektoren und Ländern.",
+    "go_to_emissions": "Zur Emissionstabelle"
+  },
+  "emissions": {
+    "title": "Emissionen",
+    "desc": "Hier findest du Infos über Emissionen. In der Tabelle unten siehst du den CO2-Ausstoß ausgewählter Unternehmen in Tonnen pro Jahr.",
+    "filter_label": "Unternehmen oder Land filtern",
+    "search_placeholder": "Daten suchen...",
+    "filter_types": {
+      "all": "Alle",
+      "company": "Unternehmen",
+      "country": "Länder"
+    },
+    "table": {
+      "company": "Unternehmen",
+      "country": "Land",
+      "co2": "CO2",
+      "no_data": "Keine passenden Emissionen gefunden."
+    }
+  },
+  "sustainability": {
+    "title": "Unser Engagement für",
+    "subtitle": "Nachhaltigkeit",
+    "intro": "Nachhaltigkeit ist mehr als nur ein Schlagwort; sie ist das Fundament einer widerstandsfähigen Zukunft.",
+    "why_title": "Warum Nachhaltigkeit?",
+    "why_desc": "Nachhaltigkeit ist gut, weil sie sicherstellt, dass wir die Bedürfnisse der Gegenwart befriedigen, ohne die Fähigkeit künftiger Generationen zu gefährden, ihre eigenen Bedürfnisse zu befriedigen. Sie fördert das ökologische Gleichgewicht und die langfristige wirtschaftliche Stabilität.",
+    "measure_title": "Messen. Verwalten. Mildern.",
+    "measure_desc": "Durch die Verfolgung von CO2-Emissionen kannst du Ineffizienzen erkennen und auf sauberere Energiequellen umsteigen. Jede reduzierte Tonne CO2 ist ein Schritt zu einem gesünderen Planeten.",
+    "cta_title": "Bereit, etwas zu bewegen?",
+    "cta_desc": "Beginne mit der Erkundung unseres Dashboards für Datentransparenz."
+  },
+  "footer": {
+    "org": "CO2 Tracker",
+    "tagline": "Stärkung der Datentransparenz in einem sich wandelnden Klima.",
+    "legal": "Impressum",
+    "project_info": "Über das Projekt"
+  },
+  "about_project": {
+    "title": "Das Projekt",
+    "subtitle": "IU Internationale Hochschule",
+    "creator_label": "Projekt-Ersteller",
+    "case_study_label": "Fallstudie (IU)",
+    "overview_header": "Projekt-Kontext",
+    "university_info": "Diese Website wurde als Fallstudie für die IU entwickelt. Sie demonstriert moderne Webentwicklungspraktiken unter Verwendung von Vue 3, Vite und Tailwind CSS.",
+    "personal_github": "GitHub Profil",
+    "project_github": "Repository",
+    "task_header": "Projekt Aufgabe",
+    "task_placeholder": "Die Aufgabe bestand darin, für eine Non-Profit-Organisation im Bereich Klimaschutz eine öffentliche Webanwendung zu entwerfen und umzusetzen. Ziel der Plattform ist es, globale Transparenz zu schaffen, indem die jährlichen CO2-Emissionen verschiedener Länder und Unternehmen interaktiv aufbereitet werden."
+  },
+  "imprint": {
+    "title": "Impressum",
+    "subtitle": "Rechtliche Informationen und Kontaktdaten.",
+    "legal_header": "Rechtliche Offenlegung",
+    "placeholder_text": "Hier würde das Impressum geschrieben stehen.\n\nCO2 Tracker ist ein gemeinnütziges Projekt, das sich der Transparenz von Klimadaten widmet. Alle angezeigten Daten dienen zu Informationszwecken und stammen aus öffentlich zugänglichen Umweltberichten.",
+    "address": "Adresse",
+    "contact": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
+  "not_found": {
+    "title": "Ups! Im All verloren?",
+    "desc": "Die gesuchte Seite scheint sich in Luft aufgelöst zu haben. Bringen wir dich wieder auf den richtigen Weg!",
+    "back_home": "Zurück zur Startseite"
+  }
+}

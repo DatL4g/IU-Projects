@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Home",
+    "emissions": "Emissions",
+    "sustainability": "Sustainability"
+  },
+  "home": {
+    "hero_title": "Global",
+    "hero_subtitle": "CO2-Emissions",
+    "hero_desc": "Data transparency for global environmental impact.",
+    "mission": "Our Mission",
+    "view_analytics": "View Emissions",
+    "why_title": "Why Tracking Matters?",
+    "why_desc": "Transparent data is the first step towards global climate accountability. We provide a platform to visualize and analyze carbon footprints across various sectors and countries.",
+    "go_to_emissions": "Go to Emissions Table"
+  },
+  "emissions": {
+    "title": "Emissions",
+    "desc": "Here you'll find info about emissions. The table below shows the CO2 output of selected companies in tons per year.",
+    "filter_label": "Filter Company or Country",
+    "search_placeholder": "Search data...",
+    "filter_types": {
+      "all": "All",
+      "company": "Companies",
+      "country": "Countries"
+    },
+    "table": {
+      "company": "Company",
+      "country": "Country",
+      "co2": "CO2",
+      "no_data": "No matching emissions found."
+    }
+  },
+  "sustainability": {
+    "title": "Our Commitment to",
+    "subtitle": "Sustainability",
+    "intro": "Sustainability is more than just a buzzword; it's the foundation of a resilient future.",
+    "why_title": "Why Sustainability?",
+    "why_desc": "Sustainability is good because it ensures that we meet the needs of the present without compromising the ability of future generations to meet their own needs. It promotes ecological balance and long-term economic stability.",
+    "measure_title": "Measure. Manage. Mitigate.",
+    "measure_desc": "By tracking carbon emissions, organizations can identify inefficiencies and transition to cleaner energy sources. Every ton of CO2 reduced is a step toward a healthier planet.",
+    "cta_title": "Ready to make a difference?",
+    "cta_desc": "Start by exploring our data transparency dashboard."
+  },
+  "footer": {
+    "org": "CO2 Tracker",
+    "tagline": "Empowering data transparency in a changing climate.",
+    "legal": "Legal Notice",
+    "project_info": "About Project"
+  },
+  "about_project": {
+    "title": "The Project",
+    "subtitle": "IU International University of Applied Sciences",
+    "creator_label": "Project Creator",
+    "case_study_label": "Case Study (IU)",
+    "overview_header": "Project Context",
+    "university_info": "This website was developed as a case study for IU. It demonstrates modern web development practices using Vue 3, Vite, and Tailwind CSS.",
+    "personal_github": "GitHub Profile",
+    "project_github": "Repository",
+    "task_header": "Project Task",
+    "task_placeholder": "The assignment was to design and develop a publicly accessible web application for a non-profit organization dedicated to combating climate change. The primary goal of the platform is to create global transparency by visualizing the annual CO2 emissions of various countries and corporations."
+  },
+  "imprint": {
+    "title": "Imprint",
+    "subtitle": "Legal information and contact details.",
+    "legal_header": "Legal Disclosure",
+    "placeholder_text": "Here would the imprint be written.\n\nCO2 Tracker is a non-profit project dedicated to climate data transparency. All data displayed is for informational purposes and sourced from publicly available environmental reports.",
+    "address": "Address",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "not_found": {
+    "title": "Oops! Lost in Space?",
+    "desc": "The page you're looking for seems to have vanished into thin air. Let's get you back on track!",
+    "back_home": "Back to Home"
+  }
+}
