@@ -52,7 +52,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: (to) => {
       const parts = to.path.split('/').filter(Boolean);
       if (parts.length > 0 && (parts[0] === 'en' || parts[0] === 'de')) {
-        return undefined;
+        return { name: 'not-found', params: { lang: parts[0], pathMatch: parts.slice(1) } };
       }
       return { name: 'home', params: { lang: DEFAULT_LOCALE } };
     }
