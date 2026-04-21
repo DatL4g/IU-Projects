@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -28,21 +28,22 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-          
-      - name: Switch directory
-        run: cd IPWA01-01
 
       - name: Install dependencies
+        working-directory: ./IPWA01-01
         run: bun install
 
       - name: Build
+        working-directory: ./IPWA01-01
         run: bun run build
 
       - name: Setup Pages
+        working-directory: ./IPWA01-01
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        working-directory: ./IPWA01-01
         with:
           path: './dist'
 
