@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         working-directory: ./IPWA01-01
-        run: bun run build
+        run: bun run build --base=/IU-Projects/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

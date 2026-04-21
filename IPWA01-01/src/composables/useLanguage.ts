@@ -40,10 +40,10 @@ export function useLanguage() {
 }
 
 export function getBrowserLocale(): SupportedLocale {
-
   const pathParts = window.location.pathname.split('/');
-  const urlLang = pathParts[1];
-  if (isSupportedLocale(urlLang)) {
+  // Find the first segment that matches a supported locale
+  const urlLang = pathParts.find(segment => isSupportedLocale(segment));
+  if (urlLang && isSupportedLocale(urlLang)) {
     return urlLang;
   }
 

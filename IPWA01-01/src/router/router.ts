@@ -9,6 +9,10 @@ import { DEFAULT_LOCALE } from '../constants/appConstants';
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    redirect: () => ({ name: 'home', params: { lang: DEFAULT_LOCALE } })
+  },
+  {
     path: '/:lang(en|de)',
     children: [
       {
@@ -45,7 +49,11 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect: () => {
+    redirect: (to) => {
+      const parts = to.path.split('/').filter(Boolean);
+      if (parts.length > 0 && (parts[0] === 'en' || parts[0] === 'de')) {
+        return undefined;
+      }
       return { name: 'home', params: { lang: DEFAULT_LOCALE } };
     }
   }
