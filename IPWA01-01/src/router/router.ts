@@ -5,12 +5,12 @@ import SustainabilityView from '../views/SustainabilityView.vue';
 import ImprintView from '../views/ImprintView.vue';
 import AboutProjectView from '../views/AboutProjectView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
-import { DEFAULT_LOCALE } from '../constants/appConstants';
+import { getBrowserLocale } from '../constants/appConstants';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: () => ({ name: 'home', params: { lang: DEFAULT_LOCALE } })
+    redirect: () => ({ name: 'home', params: { lang: getBrowserLocale() } })
   },
   {
     path: '/:lang(en|de)',
@@ -54,7 +54,7 @@ const routes: Array<RouteRecordRaw> = [
       if (parts.length > 0 && (parts[0] === 'en' || parts[0] === 'de')) {
         return { name: 'not-found', params: { lang: parts[0], pathMatch: parts.slice(1) } };
       }
-      return { name: 'home', params: { lang: DEFAULT_LOCALE } };
+      return { name: 'home', params: { lang: getBrowserLocale() } };
     }
   }
 ];

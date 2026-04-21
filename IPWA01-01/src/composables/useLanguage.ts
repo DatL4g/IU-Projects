@@ -1,7 +1,7 @@
 import { watch, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
-import { DEFAULT_LOCALE, isSupportedLocale, type SupportedLocale } from '../constants/appConstants';
+import { isSupportedLocale } from '../constants/appConstants';
 
 const isRTL = ref(false);
 
@@ -37,27 +37,4 @@ export function useLanguage() {
     isRTL,
     toggleRTL
   };
-}
-
-export function getBrowserLocale(): SupportedLocale {
-  const pathParts = window.location.pathname.split('/');
-  // Find the first segment that matches a supported locale
-  const urlLang = pathParts.find(segment => isSupportedLocale(segment));
-  if (urlLang && isSupportedLocale(urlLang)) {
-    return urlLang;
-  }
-
-  const navigatorLocale =
-    navigator.languages !== undefined
-      ? navigator.languages[0]
-      : navigator.language;
-
-  if (!navigatorLocale) return DEFAULT_LOCALE;
-
-  const trimmedLocale = navigatorLocale.trim().split(/[-_]/)[0];
-  if (isSupportedLocale(trimmedLocale)) {
-    return trimmedLocale;
-  }
-
-  return DEFAULT_LOCALE;
 }
