@@ -9,16 +9,16 @@
       // GitHub Pages SPA Hack
       (function(l) {
         if (l.search[1] === 'p' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&') 
+          const decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
           }).filter(function(v) {
             return v.slice(0, 2) === 'p='
           })[0].slice(2);
-          if (decoded !== l.pathname.slice(l.pathname.lastIndexOf('/') + 1)) {
-            window.history.replaceState(null, null,
-              l.pathname.slice(0, l.pathname.lastIndexOf('/') + 1) + decoded + l.hash
-            );
-          }
+
+          const basePath = l.pathname.endsWith('/') ? l.pathname : l.pathname + '/';
+          const cleanPath = decoded.charAt(0) === '/' ? decoded.slice(1) : decoded;
+          
+          window.history.replaceState(null, null, basePath + cleanPath + l.hash);
         }
       }(window.location))
     </script>

@@ -6,13 +6,14 @@
     <script type="text/javascript">
       // GitHub Pages SPA Hack
       // See: https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1; // For https://<username>.github.io/<repo-name>/
+      const pathSegmentsToKeep = 1;
 
       var l = window.location;
+      let path = l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/');
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
-        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=' +
+        path.replace(/&/g, '~and~') +
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
