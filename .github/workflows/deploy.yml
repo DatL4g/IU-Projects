@@ -43,9 +43,8 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        working-directory: ./IPWA01-01
         with:
-          path: './dist'
+          path: './IPWA01-01/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
