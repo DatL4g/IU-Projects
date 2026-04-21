@@ -46,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
     redirect: to => {
-      return `/${DEFAULT_LOCALE}${to.fullPath}`;
+      return { name: 'home', params: { lang: DEFAULT_LOCALE } };
     }
   }
 ];
