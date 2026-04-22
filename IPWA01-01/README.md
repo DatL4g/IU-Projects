@@ -5,7 +5,7 @@ Programmierung von Webanwendungsoberflächen
 ## Aufgabenstellung 1: CO²-Footprint
 
 Ziel war es, eine responsiv gestaltete, sichere und Schriftkultur unterstützende Webanwendung für eine Non-Profit-Organisation zu entwickeln.  
-Um die Web-App ausführen zu können, muss diese entweder für die Produktion gebuildet werden (`bun run build`), oder es kann ein lokaler Dev-Server gestartet werden. Die Web-App wurde mit Hilfe von Vue 3, Vite und Tailwind CSS v4 gebaut.
+Um die Web-App ausführen zu können, muss diese entweder für die Produktion gebaut werden (`bun run build`), oder es kann ein lokaler Dev-Server gestartet werden. Die Web-App wurde mit Hilfe von Vue 3, Vite und Tailwind CSS v4 erstellt.
 
 Für das Bauen und Testen wird folgendes auf dem System benötigt:
 
@@ -15,13 +15,13 @@ Für das Bauen und Testen wird folgendes auf dem System benötigt:
 ### Klonen
 
 ```bash
-git clone ...
+git clone git@github.com:DatL4g/IU-Projects.git
 ```
 
 ### In den Ordner navigieren
 
 ```bash
-cd ...
+cd IU-Projects/IPWA01-01/
 ```
 
 ### Installieren der Module
@@ -36,5 +36,5 @@ bun install
 bun run dev
 ```
 
-Im Terminal wird dann die Adresse genannt unter die Seite erreichbar ist.  
-In der Regel unter: `http://localhost:5173/`
+Im Terminal wird dann die Adresse genannt, unter der die Seite erreichbar ist.  
+In der Regel unter: `http://localhost:5173/IU-Projects`

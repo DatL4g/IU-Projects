@@ -60,7 +60,7 @@ const { t, locale } = useLanguage();
           <router-link :to="{ name: 'home', params: { lang: locale } }" class="btn-secondary w-full sm:w-auto">
             &larr; {{ t('not_found.back_home') }}
           </router-link>
-          <a href="https://github.com/DatL4g/co2-footprint" target="_blank" class="btn-primary w-full sm:w-auto">
+          <a href="https://github.com/DatL4g/IU-Projects" target="_blank" class="btn-primary w-full sm:w-auto">
             <div class="w-5 h-5 md:w-6 md:h-6 icon-mask icon-github text-on-primary"></div>
             {{ t('about_project.project_github') }}
           </a>

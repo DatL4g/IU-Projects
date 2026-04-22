@@ -70,7 +70,7 @@ const headerClasses = computed(() => {
           <div class="w-6 h-6 icon-mask icon-keyboard"></div>
         </button>
 
-        <a href="https://github.com/DatL4g/co2-footprint" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full" :class="isHomePage && !isScrolled ? 'hover:bg-on-background/10' : 'hover:bg-on-tertiary/10'">
+        <a href="https://github.com/DatL4g/IU-Projects" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full" :class="isHomePage && !isScrolled ? 'hover:bg-on-background/10' : 'hover:bg-on-tertiary/10'">
           <div 
             class="w-7 h-7 icon-mask icon-github" 
             :class="isHomePage && !isScrolled ? 'text-on-background' : 'text-on-tertiary'"
@@ -90,7 +90,7 @@ const headerClasses = computed(() => {
           <div class="w-6 h-6 icon-mask icon-keyboard"></div>
         </button>
         <a 
-          href="https://github.com/DatL4g/co2-footprint" 
+          href="https://github.com/DatL4g/IU-Projects" 
           target="_blank" 
           class="w-10 h-10 flex items-center justify-center rounded-full"
           :class="(isHomePage && !isScrolled) && !isMenuOpen ? 'hover:bg-on-background/10' : 'hover:bg-on-tertiary/10'"
