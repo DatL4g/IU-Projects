@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <book>
+        <title>Der Herr der Ringe - Die Gefährten</title>
+        <author>J. R. R. Tolkien</author>
+        <price>32.99</price>
+        <year>1954</year>
+    </book>
+    <book>
+        <title>Harry Potter und der Gefangene von Askaban</title>
+        <author>J. K. Rowling</author>
+        <price>25.50</price>
+        <year>1999</year>
+    </book>
+    <book>
+        <title>Eragon - Das Vermächtnis der Drachenreiter</title>
+        <author>Christopher Paolini</author>
+        <price>14.90</price>
+        <year>2003</year>
+    </book>
+</catalog>
