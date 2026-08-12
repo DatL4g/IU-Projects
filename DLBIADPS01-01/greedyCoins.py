@@ -3,16 +3,15 @@ def main():
     target_value = 987 # 9,87 Euro
     result = greedy(target_value, available_coins)
 
-    print(f"Für {target_value / 100}€ brauchst du diese Münzen:")
-    print(result)
+    print(f"Für {target_value / 100}€ brauchst du so viele Münzen: {result}")
 
-def greedy(value: int, coins: list[int]) -> list[int]:
+def greedy(value: int, coins: list[int]) -> int:
     coins_sorted = sorted(coins, reverse=True)
-    required_coins = []
+    required_coins = 0
 
     for coin in coins_sorted:
         while value >= coin:
-            required_coins.append(coin)
+            required_coins += 1
             value -= coin
 
     return required_coins
