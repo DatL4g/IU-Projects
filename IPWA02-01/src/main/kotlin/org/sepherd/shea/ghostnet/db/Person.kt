@@ -1,4 +1,4 @@
-package org.sepherd.shea.ghostnet
+package org.sepherd.shea.ghostnet.db
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

@@ -1,4 +1,4 @@
-package org.sepherd.shea.ghostnet
+package org.sepherd.shea.ghostnet.db
 
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Entity
@@ -10,6 +10,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
+import org.sepherd.shea.ghostnet.Status
 
 /**
  * ## Informationen zu Geisternetzen
