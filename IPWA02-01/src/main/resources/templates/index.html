@@ -8,6 +8,11 @@
 <body class="min-h-screen p-6">
     <header class="flex justify-between items-center mb-6 pb-4">
         <h1 class="text-3xl font-bold">Übersicht</h1>
+        <form action="/" method="get" id="filterForm" class="flex items-center gap-2 px-3 py-2">
+            <input type="checkbox" id="showAll" name="showAll" value="true" th:checked="${showAll}"
+            onchange="document.getElementById('filterForm').submit()" class="w-4 h-4">
+            <label for="showAll" class="text-sm">Alle Netze anzeigen (inkl. geborgen/verschollen)</label>
+        </form>
         <a href="/report">Netz melden</a>
     </header>
 </body>
@@ -44,6 +49,20 @@
                         <button type="submit" class="btn btn-sm btn-success text-nowrap">Bergen</button>
                     </form>
                 </div>
+                <form th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}" action="/rescued" method="post" class="d-inline">
+                    <input type="hidden" name="netId" th:value="${net.id}" />
+                    <button type="submit" class="btn btn-sm btn-success text-nowrap">Als geborgen markieren</button>
+                </form>
+                <details th:if="${net.status.name() == 'GEMELDET' || net.status.name() == 'BERGUNG_BEVORSTEHEND'}" class="inline-block mt-1">
+                    <summary class="bg-red-100 text-red-700 hover:bg-red-200 py-1 px-2">Verschollen</summary>
+                    <form action="/missing" method="post" class="flex gap-2 mt-2 p-2 bg-red-50">
+                        <input type="hidden" name="netId" th:value="${net.id}"/>
+                        <input type="text" name="personName" placeholder="Name" class="px-2 py-1 text-xs" />
+                        <input type="text" name="personPhone" placeholder="Telefonnummer" class="px-2 py-1 text-xs" />
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 text-xs">Melden</button>
+                    </form>
+                </details>
+                <span th:if="${net.status.name() == 'GEBORGEN' || net.status.name() == 'VERSCHOLLEN'}" class="text-xs text-gray-400 italic">Keine Aktion möglich</span>
             </td>
         </tr>
     </tbody>

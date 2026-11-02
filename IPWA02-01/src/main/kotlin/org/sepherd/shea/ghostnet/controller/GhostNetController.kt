@@ -15,8 +15,18 @@ class GhostNetController(
 ) {
 
     @GetMapping
-    fun index(model: Model): String {
-        model.addAttribute("nets", ghostNetService.getActiveGhostNets())
+    fun index(
+        @RequestParam(defaultValue = "false") showAll: Boolean,
+        model: Model
+    ): String {
+        val nets = if (showAll) {
+            ghostNetService.getAllGhostNets()
+        } else {
+            ghostNetService.getActiveGhostNets()
+        }
+
+        model.addAttribute("nets", nets)
+        model.addAttribute("showAll", showAll)
         return "index"
     }
 
@@ -44,6 +54,22 @@ class GhostNetController(
         @RequestParam rescuerPhone: String
     ): String {
         ghostNetService.assignRescuer(netId, rescuerName, rescuerPhone)
+        return "redirect:/"
+    }
+
+    @PostMapping("/rescued")
+    fun markRescued(@RequestParam netId: Long): String {
+        ghostNetService.markAsRescued(netId)
+        return "redirect:/"
+    }
+
+    @PostMapping("/missing")
+    fun markAsMissing(
+        @RequestParam netId: Long,
+        @RequestParam personName: String,
+        @RequestParam personPhone: String
+    ): String {
+        ghostNetService.markAsMissing(netId, personName, personPhone)
         return "redirect:/"
     }
 
