@@ -35,6 +35,16 @@
                 <span class="bg-blue-200 text-blue-800" th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}">Bergung bevorstehend</span>
             </td>
             <td th:text="${net.rescuer != null ? net.rescuer.name + ' (' + net.rescuer.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
+            <td class="py-3 px-6 text-left">
+                <div th:if="${net.status.name() == 'GEMELDET'}" class="mb-2">
+                    <form action="/assign" method="post" class="flex gap-2">
+                        <input type="hidden" name="netId" th:value="${net.id}" />
+                        <input type="text" name="rescuerName" placeholder="Name" class="form-control form-control-sm" required />
+                        <input type="text" name="rescuerPhone" placeholder="Telefon" class="form-control form-control-sm" required />
+                        <button type="submit" class="btn btn-sm btn-success text-nowrap">Bergen</button>
+                    </form>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>

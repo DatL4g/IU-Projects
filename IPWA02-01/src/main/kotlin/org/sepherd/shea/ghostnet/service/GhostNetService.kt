@@ -45,4 +45,18 @@ class GhostNetService(
         )
         return ghostNetRepository.save(net)
     }
+
+    @Transactional
+    fun assignRescuer(netId: Long, rescuerName: String, rescuerPhone: String): GhostNet {
+        require(rescuerName.isNotBlank()) { "Bergende Person muss einen Namen haben" }
+        require(rescuerPhone.isNotBlank()) { "Bergende Person muss eine Telefonnummer haben" }
+
+        val net = ghostNetRepository.findById(netId).orElseThrow { IllegalArgumentException("Geisternetz mit ID: $netId nicht gefunden") }
+        check(net.status == Status.GEMELDET) { "Netz ist bereits für Bergung eingetragen oder geborgen" }
+
+        val rescuer = Person(name = rescuerName, phoneNumber = rescuerPhone)
+        val updatedNet = net.copy(rescuer = rescuer, status = Status.BERGUNG_BEVORSTEHEND)
+
+        return ghostNetRepository.save(updatedNet)
+    }
 }

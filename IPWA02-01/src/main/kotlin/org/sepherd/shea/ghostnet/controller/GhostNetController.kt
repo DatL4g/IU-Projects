@@ -37,4 +37,14 @@ class GhostNetController(
         return "redirect:/"
     }
 
+    @PostMapping("/assign")
+    fun assignRescuer(
+        @RequestParam netId: Long,
+        @RequestParam rescuerName: String,
+        @RequestParam rescuerPhone: String
+    ): String {
+        ghostNetService.assignRescuer(netId, rescuerName, rescuerPhone)
+        return "redirect:/"
+    }
+
 }
