@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Shea Sepherd: Ghost Net Fishing</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <header>
-        <h1>Übersicht</h1>
+<body class="min-h-screen p-6">
+    <header class="flex justify-between items-center mb-6 pb-4">
+        <h1 class="text-3xl font-bold">Übersicht</h1>
         <a href="/report">Netz melden</a>
     </header>
 </body>
-<table>
+<table class="min-w-full leading-normal">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Standort</th>
-            <th>Größe (m²)</th>
-            <th>Status</th>
-            <th>Bergende Person</th>
-            <th>Aktionen</th>
+        <tr class="bg-gray-800 text-white text-sm leading-normal">
+            <th class="py-3 px-6 text-left">ID</th>
+            <th class="py-3 px-6 text-left">Standort</th>
+            <th class="py-3 px-6 text-left">Größe (m²)</th>
+            <th class="py-3 px-6 text-left">Status</th>
+            <th class="py-3 px-6 text-left">Bergende Person</th>
+            <th class="py-3 px-6 text-left">Aktionen</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-sm font-light">
         <tr th:if="${nets.empty}">
-            <td colspan="6">Aktuell keine Geisternetze erfasst.</td>
+            <td colspan="6" class="py-6 text-center">Aktuell keine Geisternetze erfasst.</td>
         </tr>
-        <tr th:each="net : ${nets}">
-            <td th:text="${net.id}">0</td>
-            <td th:text="${net.latitude + ' / ' + net.longitude}">0 / 0</td>
-            <td th:text="${net.estimatedSize}">0</td>
+        <tr th:each="net : ${nets}" class="hover:bg-gray-50">
+            <td th:text="${net.id}" class="py-3 px-6 text-left">0</td>
+            <td th:text="${net.latitude + ' / ' + net.longitude}" class="py-3 px-6 text-left">0 / 0</td>
+            <td th:text="${net.estimatedSize}" class="py-3 px-6 text-left">0</td>
+            <td class="py-3 px-6 text-left">
+                <span class="bg-yellow-200 text-yellow-800" th:if="${net.status.name() == 'GEMELDET'}">Gemeldet</span>
+                <span class="bg-blue-200 text-blue-800" th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}">Bergung bevorstehend</span>
+            </td>
+            <td th:text="${net.rescuer != null ? net.rescuer.name + ' (' + net.rescuer.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
         </tr>
     </tbody>
 </table>
