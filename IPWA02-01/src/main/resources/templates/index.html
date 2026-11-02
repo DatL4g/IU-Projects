@@ -25,6 +25,11 @@
         <tr th:if="${nets.empty}">
             <td colspan="6">Aktuell keine Geisternetze erfasst.</td>
         </tr>
+        <tr th:each="net : ${nets}">
+            <td th:text="${net.id}">0</td>
+            <td th:text="${net.latitude + ' / ' + net.longitude}">0 / 0</td>
+            <td th:text="${net.estimatedSize}">0</td>
+        </tr>
     </tbody>
 </table>
 </html>

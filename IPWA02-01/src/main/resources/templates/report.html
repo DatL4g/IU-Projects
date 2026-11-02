@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Shea Sepherd: Ghost Net Fishing</title>
+</head>
+<body>
+    <h1>Geisternetz melden</h1>
+
+    <form action="/report" method="post">
+        <h5>Netzdaten</h5>
+        <div>
+            <label>Breitengrad (Latitude)</label>
+            <input type="number" name="latitude" placeholder="z.B. 12.345" required step="any" />
+        </div>
+        <div>
+            <label>Längengrad (Longitude)</label>
+            <input type="number" name="longitude" placeholder="z.B. 54.321" required step="any" />
+        </div>
+        <div>
+            <label>Geschätzte Größe (m²)</label>
+            <input type="number" name="estimatedSize" placeholder="z.B. 25" required />
+        </div>
+
+        <h5>Kontaktdaten</h5>
+        <div>
+            <label>Name</label>
+            <input type="text" name="reporterName" placeholder="Optional" />
+        </div>
+        <div>
+            <label>Telefonnummer</label>
+            <input type="text" name="reporterPhone" placeholder="Optional" />
+        </div>
+
+        <a href="/">Abbrechen</a>
+        <button type="submit">Bestätigen</button>
+    </form>
+</body>
+</html>

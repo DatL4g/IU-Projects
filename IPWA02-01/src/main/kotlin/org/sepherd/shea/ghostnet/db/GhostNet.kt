@@ -29,7 +29,7 @@ import org.sepherd.shea.ghostnet.Status
 data class GhostNet(
     val latitude: Double,
     val longitude: Double,
-    val estimatedSize: Double,
+    val estimatedSize: Int,
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null,
     @Enumerated(EnumType.STRING) val status: Status = Status.GEMELDET,
     @ManyToOne(cascade = [CascadeType.ALL]) @JoinColumn(name = "reporter_id") val reporter: Person? = null,
