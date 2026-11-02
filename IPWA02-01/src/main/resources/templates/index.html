@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Shea Sepherd: Ghost Net Fishing</title>
+</head>
+<body>
+    <header>
+        <h1>Übersicht</h1>
+        <a href="/report">Netz melden</a>
+    </header>
+</body>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Standort</th>
+            <th>Größe (m²)</th>
+            <th>Status</th>
+            <th>Bergende Person</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:if="${nets.empty}">
+            <td colspan="6">Aktuell keine Geisternetze erfasst.</td>
+        </tr>
+    </tbody>
+</table>
+</html>
