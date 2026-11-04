@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Shea Sepherd: Ghost Net Fishing</title>
+</head>
+<body>
+    <h1>Bergung übernehmen</h1>
+    <p>Trage deine Kontaktdaten ein, um die Bergung zu übernehmen</p>
+    <div>
+        <h2>Details zum Geisternetz</h2>
+        <div>
+            <span>Netz-ID:</span>
+            <span th:text="${net.id}">0</span>
+        </div>
+        <div>
+            <span>Standort (Lat/Lon):</span>
+            <span th:text="${net.latitude + ' / ' + net.longitude}">0 / 0</span>
+        </div>
+        <div>
+            <span>Größe:</span>
+            <span th:text="${net.estimatedSize} + ' m²'">0</span>
+        </div>
+    </div>
+    <form th:action="@{'assign/' + ${net.id}}" method="post">
+        <h5>Kontaktdaten</h5>
+        <div>
+            <label>Name</label>
+            <input type="text" name="reporterName" required />
+        </div>
+        <div>
+            <label>Telefonnummer</label>
+            <input type="text" name="reporterPhone" required />
+        </div>
+
+        <a href="/">Abbrechen</a>
+        <button type="submit">Bestätigen</button>
+    </form>
+</body>
+</html>

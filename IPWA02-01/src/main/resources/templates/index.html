@@ -41,14 +41,11 @@
             </td>
             <td th:text="${net.rescuer != null ? net.rescuer.name + ' (' + net.rescuer.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
             <td class="py-3 px-6 text-left">
-                <div th:if="${net.status.name() == 'GEMELDET'}" class="mb-2">
-                    <form action="/assign" method="post" class="flex gap-2">
-                        <input type="hidden" name="netId" th:value="${net.id}" />
-                        <input type="text" name="rescuerName" placeholder="Name" class="form-control form-control-sm" required />
-                        <input type="text" name="rescuerPhone" placeholder="Telefon" class="form-control form-control-sm" required />
-                        <button type="submit" class="btn btn-sm btn-success text-nowrap">Bergen</button>
-                    </form>
-                </div>
+                <a th:if="${net.status.name() == 'GEMELDET'}"
+                   th:href="@{'/assign/' + ${net.id}}"
+                   class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-3 rounded text-xs transition inline-block">
+                    Bergung übernehmen
+                </a>
                 <form th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}" action="/rescued" method="post" class="d-inline">
                     <input type="hidden" name="netId" th:value="${net.id}" />
                     <button type="submit" class="btn btn-sm btn-success text-nowrap">Als geborgen markieren</button>

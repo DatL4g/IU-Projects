@@ -24,6 +24,10 @@ class GhostNetService(
         )
     }
 
+    fun getGhostNetById(id: Long): GhostNet {
+        return ghostNetRepository.findById(id).orElseThrow { IllegalArgumentException("Geisternetz mit ID: $id nicht gefunden") }
+    }
+
     @Transactional
     fun reportGhostNet(
         latitude: Double,
