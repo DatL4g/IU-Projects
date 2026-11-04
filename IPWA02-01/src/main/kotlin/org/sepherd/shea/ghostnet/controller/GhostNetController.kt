@@ -53,14 +53,4 @@ class GhostNetController(
         return "redirect:/"
     }
 
-    @PostMapping("/missing")
-    fun markAsMissing(
-        @RequestParam netId: Long,
-        @RequestParam personName: String,
-        @RequestParam personPhone: String
-    ): String {
-        ghostNetService.markAsMissing(netId, personName, personPhone)
-        return "redirect:/"
-    }
-
 }
