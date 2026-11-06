@@ -30,23 +30,6 @@ class GhostNetController(
         return "index"
     }
 
-    @GetMapping("/report")
-    fun showReportForm(): String {
-        return "report"
-    }
-
-    @PostMapping("/report")
-    fun processReport(
-        @RequestParam latitude: Double,
-        @RequestParam longitude: Double,
-        @RequestParam estimatedSize: Int,
-        @RequestParam(required = false) reporterName: String?,
-        @RequestParam(required = false) reporterPhone: String?
-    ): String {
-        ghostNetService.reportGhostNet(latitude, longitude, estimatedSize, reporterName, reporterPhone)
-        return "redirect:/"
-    }
-
     @PostMapping("/rescued")
     fun markRescued(@RequestParam netId: Long): String {
         ghostNetService.markAsRescued(netId)

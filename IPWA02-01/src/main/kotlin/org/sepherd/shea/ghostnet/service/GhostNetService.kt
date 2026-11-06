@@ -55,7 +55,7 @@ class GhostNetService(
         require(rescuerName.isNotBlank()) { "Bergende Person muss einen Namen haben" }
         require(rescuerPhone.isNotBlank()) { "Bergende Person muss eine Telefonnummer haben" }
 
-        val net = ghostNetRepository.findById(netId).orElseThrow { IllegalArgumentException("Geisternetz mit ID: $netId nicht gefunden") }
+        val net = getGhostNetById(netId)
         check(net.status == Status.GEMELDET) { "Netz ist bereits für Bergung eingetragen oder geborgen" }
 
         val rescuer = Person(name = rescuerName, phoneNumber = rescuerPhone)
@@ -66,7 +66,7 @@ class GhostNetService(
 
     @Transactional
     fun markAsRescued(netId: Long): GhostNet {
-        val net = ghostNetRepository.findById(netId).orElseThrow { IllegalArgumentException("Geisternetz mit ID: $netId nicht gefunden") }
+        val net = getGhostNetById(netId)
         check(net.status == Status.BERGUNG_BEVORSTEHEND) { "Nur Netze mit Status \"Bergung bevorstehend\" können als geborgen gemeldet werden" }
 
         val updatedNet = net.copy(status = Status.GEBORGEN)
@@ -77,7 +77,7 @@ class GhostNetService(
     fun markAsMissing(netId: Long, personName: String, personPhone: String): GhostNet {
         require(personName.isNotBlank() && personPhone.isNotBlank()) { "Geisternetze können nicht anonym als verschollen gemeldet werden" }
 
-        val net = ghostNetRepository.findById(netId).orElseThrow { IllegalArgumentException("Geisternetz mit ID: $netId nicht gefunden") }
+        val net = getGhostNetById(netId)
         val updatedNet = net.copy(status = Status.VERSCHOLLEN)
         return ghostNetRepository.save(updatedNet)
     }

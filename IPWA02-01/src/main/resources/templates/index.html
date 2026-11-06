@@ -23,6 +23,7 @@
             <th class="py-3 px-6 text-left">Standort</th>
             <th class="py-3 px-6 text-left">Größe (m²)</th>
             <th class="py-3 px-6 text-left">Status</th>
+            <th class="py-3 px-6 text-left">Meldende Person</th>
             <th class="py-3 px-6 text-left">Bergende Person</th>
             <th class="py-3 px-6 text-left">Aktionen</th>
         </tr>
@@ -39,6 +40,7 @@
                 <span class="bg-yellow-200 text-yellow-800" th:if="${net.status.name() == 'GEMELDET'}">Gemeldet</span>
                 <span class="bg-blue-200 text-blue-800" th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}">Bergung bevorstehend</span>
             </td>
+            <td th:text="${net.reporter != null ? net.reporter.name + ' (' + net.reporter.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
             <td th:text="${net.rescuer != null ? net.rescuer.name + ' (' + net.rescuer.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
             <td class="py-3 px-6 text-left">
                 <a th:if="${net.status.name() == 'GEMELDET'}"
