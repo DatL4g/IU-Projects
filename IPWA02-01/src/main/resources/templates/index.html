@@ -39,6 +39,8 @@
             <td class="py-3 px-6 text-left">
                 <span class="bg-yellow-200 text-yellow-800" th:if="${net.status.name() == 'GEMELDET'}">Gemeldet</span>
                 <span class="bg-blue-200 text-blue-800" th:if="${net.status.name() == 'BERGUNG_BEVORSTEHEND'}">Bergung bevorstehend</span>
+                <span class="bg-green-200 text-green-800" th:if="${net.status.name() == 'GEBORGEN'}">Geborgen</span>
+                <span class="bg-red-200 text-red-800" th:if="${net.status.name() == 'VERSCHOLLEN'}">Verschollen</span>
             </td>
             <td th:text="${net.reporter != null ? net.reporter.name + ' (' + net.reporter.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>
             <td th:text="${net.rescuer != null ? net.rescuer.name + ' (' + net.rescuer.phoneNumber + ')' : '-'}" class="py-3 px-6 text-left">-</td>

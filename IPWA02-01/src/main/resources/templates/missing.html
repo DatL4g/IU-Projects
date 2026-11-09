@@ -22,7 +22,7 @@
             <span th:text="${net.estimatedSize} + ' m²'">0</span>
         </div>
     </div>
-    <form th:action="@{'missing/' + ${net.id}}" method="post">
+    <form th:action="@{'/missing/' + ${net.id}}" method="post">
         <h2>Kontaktdaten</h2>
         <div>
             <label>Name</label>

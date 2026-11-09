@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-@RequestMapping("/assign/")
+@RequestMapping("/assign")
 class AssignNetController(
     private val ghostNetService: GhostNetService
 ) {
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun showAssignForm(@PathVariable id: Long, model: Model): String {
         val net = ghostNetService.getGhostNetById(id)
         if (net.status != Status.GEMELDET) {
@@ -27,7 +27,7 @@ class AssignNetController(
         return "assign"
     }
 
-    @PostMapping("{id}")
+    @PostMapping("/{id}")
     fun processAssign(
         @PathVariable id: Long,
         @RequestParam rescuerName: String,

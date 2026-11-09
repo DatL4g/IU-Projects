@@ -78,7 +78,8 @@ class GhostNetService(
         require(personName.isNotBlank() && personPhone.isNotBlank()) { "Geisternetze können nicht anonym als verschollen gemeldet werden" }
 
         val net = getGhostNetById(netId)
-        val updatedNet = net.copy(status = Status.VERSCHOLLEN)
+        val person = Person(name = personName, phoneNumber = personPhone)
+        val updatedNet = net.copy(status = Status.VERSCHOLLEN, reporter = person)
         return ghostNetRepository.save(updatedNet)
     }
 }

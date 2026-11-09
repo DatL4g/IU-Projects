@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-@RequestMapping("/missing/")
+@RequestMapping("/missing")
 class MissingNetController(
     private val ghostNetService: GhostNetService
 ) {
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun showMissingForm(@PathVariable id: Long, model: Model): String {
         val net = ghostNetService.getGhostNetById(id)
 
@@ -28,7 +28,7 @@ class MissingNetController(
         return "missing"
     }
 
-    @PostMapping("{id}")
+    @PostMapping("/{id}")
     fun processMissing(
         @PathVariable id: Long,
         @RequestParam personName: String,
